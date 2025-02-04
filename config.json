@@ -1,0 +1,46 @@
+{
+  "Systems": {
+    "VantageTeams": {
+      "LogFiles": [
+        {
+          "FilePath": "C:\\path\\to\\VantageTeams_log1.txt",
+          "Filters": [
+            {
+              "Keyword": "Processed",
+              "Field": "Message",
+              "Regex": true,
+              "CaptureGroup": 1,
+              "Pattern": "Processed\\s+(\\d+)\\s+items"
+            }
+          ]
+        },
+        {
+          "FilePath": "C:\\path\\to\\VantageTeams_log2.txt",
+          "Filters": [
+            {
+              "Keyword": "Check",
+              "Field": "Message",
+              "Regex": true,
+              "CaptureGroup": 1,
+              "Pattern": "Check\\s+(\\w+)\\s+completed"
+            }
+          ]
+        }
+      ]
+    },
+    "VantageSystems": {
+      "LogFiles": [
+        {
+          "FilePath": "C:\\path\\to\\VantageSystems_log1.txt",
+          "Filters": [
+            {
+              "Keyword": "Success",
+              "Field": "Message",
+              "Regex": false
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
