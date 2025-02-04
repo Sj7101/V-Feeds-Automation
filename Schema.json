@@ -1,0 +1,178 @@
+{
+  "Systems": {
+    "VantageTeams": [
+      {
+        "Check1": "Value1",
+        "Check2": "Value2"
+      }
+    ],
+    "VantageSystems": [
+      {
+        "Check1": "Value3",
+        "Check2": "Value4"
+      }
+    ],
+    "ICE": [
+      {
+        "Check1": "Value5",
+        "Check2": "Value6"
+      }
+    ],
+    "BB": [
+      {
+        "Check1": "Value7",
+        "Check2": "Value8"
+      }
+    ],
+    "Symphony": [
+      {
+        "Check1": "Value9",
+        "Check2": "Value10"
+      }
+    ],
+    "CoreLogic": [
+      {
+        "Check1": "Value11",
+        "Check2": "Value12"
+      }
+    ],
+    "AlphaSystem": [
+      {
+        "Check1": "Value13",
+        "Check2": "Value14"
+      }
+    ],
+    "BetaServer": [
+      {
+        "Check1": "Value15",
+        "Check2": "Value16"
+      }
+    ],
+    "GammaCore": [
+      {
+        "Check1": "Value17",
+        "Check2": "Value18"
+      }
+    ],
+    "DeltaMachine": [
+      {
+        "Check1": "Value19",
+        "Check2": "Value20"
+      }
+    ],
+    "EchoPlatform": [
+      {
+        "Check1": "Value21",
+        "Check2": "Value22"
+      }
+    ],
+    "FoxtrotNode": [
+      {
+        "Check1": "Value23",
+        "Check2": "Value24"
+      }
+    ],
+    "HotelCore": [
+      {
+        "Check1": "Value25",
+        "Check2": "Value26"
+      }
+    ],
+    "IndiaServer": [
+      {
+        "Check1": "Value27",
+        "Check2": "Value28"
+      }
+    ],
+    "JulietStation": [
+      {
+        "Check1": "Value29",
+        "Check2": "Value30"
+      }
+    ],
+    "KiloMachine": [
+      {
+        "Check1": "Value31",
+        "Check2": "Value32"
+      }
+    ],
+    "LimaNode": [
+      {
+        "Check1": "Value33",
+        "Check2": "Value34"
+      }
+    ],
+    "MikeCore": [
+      {
+        "Check1": "Value35",
+        "Check2": "Value36"
+      }
+    ],
+    "NovemberPlatform": [
+      {
+        "Check1": "Value37",
+        "Check2": "Value38"
+      }
+    ],
+    "OscarServer": [
+      {
+        "Check1": "Value39",
+        "Check2": "Value40"
+      }
+    ],
+    "PapaCore": [
+      {
+        "Check1": "Value41",
+        "Check2": "Value42"
+      }
+    ],
+    "QuebecNode": [
+      {
+        "Check1": "Value43",
+        "Check2": "Value44"
+      }
+    ],
+    "RomeoMachine": [
+      {
+        "Check1": "Value45",
+        "Check2": "Value46"
+      }
+    ],
+    "SierraServer": [
+      {
+        "Check1": "Value47",
+        "Check2": "Value48"
+      }
+    ],
+    "TangoPlatform": [
+      {
+        "Check1": "Value49",
+        "Check2": "Value50"
+      }
+    ],
+    "UniformCore": [
+      {
+        "Check1": "Value51",
+        "Check2": "Value52"
+      }
+    ],
+    "VictorMachine": [
+      {
+        "Check1": "Value53",
+        "Check2": "Value54"
+      }
+    ],
+    "WhiskeyNode": [
+      {
+        "Check1": "Value55",
+        "Check2": "Value56"
+      }
+    ],
+    "XrayServer": [
+      {
+        "Check1": "Value57",
+        "Check2": "Value58"
+      }
+    ]
+  }
+}
