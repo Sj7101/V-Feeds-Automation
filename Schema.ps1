@@ -45,48 +45,68 @@ JSON
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "properties": {
-    "timestamp": {
-      "type": "string",
-      "format": "date-time"
-    },
-    "log_level": {
-      "type": "string",
-      "enum": ["INFO", "DEBUG", "ERROR", "WARN"]
-    },
-    "message": {
-      "type": "string"
-    },
-    "source": {
-      "type": "string"
-    },
-    "event_id": {
-      "type": "string"
-    },
-    "user_id": {
-      "type": "string"
-    },
-    "ip_address": {
-      "type": "string",
-      "format": "ipv4"
-    },
-    "error_code": {
-      "type": "string"
-    },
-    "additional_metadata": {
+    "systems": {
       "type": "object",
-      "properties": {
-        "stack_trace": {
-          "type": "string"
-        },
-        "transaction_id": {
-          "type": "string"
+      "patternProperties": {
+        "^[a-zA-Z0-9_-]+$": {
+          "type": "object",
+          "properties": {
+            "system_name": {
+              "type": "string"
+            },
+            "logs": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "timestamp": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "log_level": {
+                    "type": "string",
+                    "enum": ["INFO", "DEBUG", "ERROR", "WARN"]
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "event_id": {
+                    "type": "string"
+                  },
+                  "user_id": {
+                    "type": "string"
+                  },
+                  "ip_address": {
+                    "type": "string",
+                    "format": "ipv4"
+                  },
+                  "error_code": {
+                    "type": "string"
+                  },
+                  "additional_metadata": {
+                    "type": "object",
+                    "properties": {
+                      "stack_trace": {
+                        "type": "string"
+                      },
+                      "transaction_id": {
+                        "type": "string"
+                      }
+                    },
+                    "additionalProperties": true
+                  }
+                },
+                "required": ["timestamp", "log_level", "message", "event_id"]
+              }
+            }
+          }
         }
-      },
-      "additionalProperties": true
+      }
     }
   },
-  "required": ["timestamp", "log_level", "message", "event_id"]
+  "required": ["systems"]
 }
+
 
 
 #>
