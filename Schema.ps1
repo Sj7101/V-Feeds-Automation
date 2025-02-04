@@ -1,3 +1,46 @@
+$logFilePath = "C:\path\to\logfile.log"
+$jsonOutputPath = "C:\path\to\output.json"
+
+# Function to parse log file and convert to JSON
+function Convert-LogToJson {
+    param (
+        [string]$logFile
+    )
+    
+    $logEntries = @()
+
+    # Read log file line by line
+    Get-Content $logFile | ForEach-Object {
+        $logLine = $_
+        
+        # Assume a log format: [timestamp] [log_level] [message] [source] [event_id] [user_id] [ip_address]
+        $logData = $logLine -split "\s*\[\s*" | Where-Object {$_ -ne ""}
+        
+        if ($logData.Count -ge 7) {
+            $entry = @{
+                "timestamp"      = $logData[0].TrimEnd(']')
+                "log_level"      = $logData[1].TrimEnd(']')
+                "message"        = $logData[2].TrimEnd(']')
+                "source"         = $logData[3].TrimEnd(']')
+                "event_id"       = $logData[4].TrimEnd(']')
+                "user_id"        = $logData[5].TrimEnd(']')
+                "ip_address"     = $logData[6].TrimEnd(']')
+            }
+            
+            # Convert log data to JSON
+            $logEntries += $entry
+        }
+    }
+
+    # Convert to JSON and output
+    $logEntries | ConvertTo-Json -Depth 3 | Out-File $jsonOutputPath
+}
+
+# Run the function
+Convert-LogToJson -logFile $logFilePath
+
+<#
+JSON 
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
@@ -46,6 +89,11 @@
 }
 
 
+#>
+
+<#
+SQL
+
 CREATE TABLE LogEntries (
     LogID INT PRIMARY KEY IDENTITY(1,1),
     Timestamp DATETIME,
@@ -59,45 +107,4 @@ CREATE TABLE LogEntries (
     AdditionalMetadata NVARCHAR(MAX)  -- Store JSON if there is additional nested metadata
 );
 
-
-$logFilePath = "C:\path\to\logfile.log"
-$jsonOutputPath = "C:\path\to\output.json"
-
-# Function to parse log file and convert to JSON
-function Convert-LogToJson {
-    param (
-        [string]$logFile
-    )
-    
-    $logEntries = @()
-
-    # Read log file line by line
-    Get-Content $logFile | ForEach-Object {
-        $logLine = $_
-        
-        # Assume a log format: [timestamp] [log_level] [message] [source] [event_id] [user_id] [ip_address]
-        $logData = $logLine -split "\s*\[\s*" | Where-Object {$_ -ne ""}
-        
-        if ($logData.Count -ge 7) {
-            $entry = @{
-                "timestamp"      = $logData[0].TrimEnd(']')
-                "log_level"      = $logData[1].TrimEnd(']')
-                "message"        = $logData[2].TrimEnd(']')
-                "source"         = $logData[3].TrimEnd(']')
-                "event_id"       = $logData[4].TrimEnd(']')
-                "user_id"        = $logData[5].TrimEnd(']')
-                "ip_address"     = $logData[6].TrimEnd(']')
-            }
-            
-            # Convert log data to JSON
-            $logEntries += $entry
-        }
-    }
-
-    # Convert to JSON and output
-    $logEntries | ConvertTo-Json -Depth 3 | Out-File $jsonOutputPath
-}
-
-# Run the function
-Convert-LogToJson -logFile $logFilePath
-
+#>
