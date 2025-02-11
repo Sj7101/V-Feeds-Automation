@@ -1,0 +1,157 @@
+========== Symphony Check Start 2025-02-10  8:10:02.78 ==========
+
+Script Location \\MSGWVTGSIL\D$\Vantage\VantageMonitors\Symphony\Symphony.bat
+
+################### Import and Export ###################
+
+There should be files every day
+
+=================== Symphony Import Count ===================
+
+=================== NOTE:  There should be messages for yesterday and today ===================
+Date	  |Network	  	|Msg Count
+----------|-------------|----------
+2025-02-10|SymphonyChat | 349
+2025-02-11|SymphonyChat | 5249
+
+(2 rows affected)
+
+=================== Symphony Export Count ===================
+
+=================== NOTE: There should be messages for yesterday and today ===================
+
+This feed is filtered
+Date 	  | Exporter	 			   |Export State 	|Count
+----------|----------------------------|---------------|-----
+0225/2/10 | SymphonyChat-CAZL   	   |Exported   	| 296
+0225/2/10 | SymphonyChat-PAZL   	   |Exported   	| 2
+0225/2/10 | CADR-WFS-SymphonyChat      |Exported   	| 262
+0225/2/10 | CADR-QA-WFS-SymphonyChat   |Exported   	| 91
+0225/2/10 | CADR-QA-WFA-SymphonyChat   |Exported   	| 3
+0225/2/11 | SymphonyChat-CAZL   	   |Exported   	| 4426
+0225/2/11 | SymphonyChat-PAZL   	   |Exported   	| 10
+0225/2/11 | CADR-WFS-SymphonyChat  	   |Exported   	| 3194
+0225/2/11 | CADR-QA-WFS-SymphonyChat   |Exported   	| 1537
+0225/2/11 | CADR-QA-WFA-SymphonyChat   |Exported   	| 10
+
+######################## Directory Checks ########################
+
+############ Direct feed from internal system. ########################
+
+=========================== Contact name@Wells.com for any issues =================================
+
+File should have today's date in the name@Wells
+
+=============================== Check \\MSFGWNDMSIL001\D$\DTS_Downloads\Symphony =========================
+
+There should be no files in this directory
+
+ Directory of \\MSGWNDMSIL001\D$\DTS_Downloads\Symphony
+
+02/11/2025   03:01 AM     <DIR> 	.
+02/11/2025   03:01 AM     <DIR>		..
+				0 File(s)			0 bytes
+				2 Dir(s) 1,055,365,484,544 bytes free
+				
+==========================================================================================
+
+######################## Check \\Msgwvtgsil1701\d$\Imports\Symphony ########################
+
+================== Check Chat Imports\Symphony
+
+ Volume in drive \\Msgwvtgsil1701\d$ is Drive_D   Volume Serial Number is 705F-B1E8
+ 
+ Directory of \\Msgwvtgsil1701\d$\Imports\Symphony\Chat
+ 
+11/04/2024  02:32  PM      <DIR>            SkippedFiles 
+12/15/2024  09:54  AM      <DIR>            FailedFiles
+02/11/2025  05:00  PM      <DIR>            ProcessedFiles
+02/11/2025  05:00  AM      <DIR>            .
+02/11/2025  05:00  AM      <DIR>            ..
+02/11/2025  05:00  AM      <DIR>            wfc-na-prod-chat-glb-4_Attachment
+				0 File(s)
+				6 Dir(s)   845,931,921,408 bytes free
+				
+==================== Check Social Imports
+
+ Volume in Drive \\Msgwvtgsil1701\d$ is Drive_D   Volume Serial Number is 705F-B1E8
+
+Directory of \\Msgwvtgsil1701\d$\Imports\Symphony\Social
+ 
+08/29/2022  10:37  PM      <DIR>            FailedFiles
+10/26/2023  08:44  AM      <DIR>            SkippedFiles
+02/11/2025  03:15  AM      <DIR>            ProcessedFiles
+02/11/2025  03:15  AM      <DIR>            .
+02/11/2025  03:15  AM      <DIR>            ..
+				0 File(s)					0 Bytes
+				5 Dir(s)     845,931,921,408 bytes free
+
+======================= Processed Check ====================
+
+============ Check Chat Processed
+
+ Volume in drive \\msgwvtgsil1701\D$ is Drive_D  Volume Serial Number is 705F-B1E8
+ 
+ Directory of \\Msgwvtgsil1701\d$\Imports\Symphony\Chat\ProcessedFiles
+ 
+02/09/2025   07:13  PM		28,702,727 wfc-na-prod-chat-glb-4_SD-2025-02-09-0_ED-2025-02-10-00_GD-2025-02-10_1739146223676_conversation.xml
+02/10/2025   07:38  PM		201,273,187 wfc-na-prod-chat-glb-4_SD-2025-02-10-0_ED-2025-02-11-00_GD-2025-02-11_1739232610684_conversation.xml
+				2 File(s)	  229,975,914 bytes
+				
+	 Total Files Listed:
+				2 File(s)	229,975,914 bytes
+				0 Dir(s)	845,931,921,408 bytes free
+				
+==================== Check Social Processed
+
+ Volume in drive \\Msgwvtgsil1701\d$ is Drive_D   Volume Serial Number is 705F-B1E8
+
+ Directory of  \\Msgwvtgsil1701\d$\Imports\Social\Symphony\
+ 
+02/09/2025   07:13  PM		70 wfc-na-prod-chat-glb-4_SD-2025-02-09-0_ED-2025-02-10-00_GD-2025-02-10_1739146223676_content_importer.xml
+02/10/2025   07:38  PM		70 wfc-na-prod-chat-glb-4_SD-2025-02-10-0_ED-2025-02-11-00_GD-2025-02-11_1739232610684_content_importer.xml
+				2 File(s)	  140 bytes
+				
+	 Total Files Listed:
+				2 File(s)	140 bytes
+				0 Dir(s)	845,931,921,408 bytes free
+				
+========================== Error Check ==========================
+
+If there are files here the importer did not run =======================================================
+
+========================== Failed and Skipped Folder Check ==========================
+
+These dfirectories should be empty
+
+=================================================================================
+
+Volume in Drive \\Msgwvtgsil1701\d$ is Drive_D   Volume Serial Number is 705F-B1E8
+
+Directory of \\Msgwvtgsil1701\d$\Imports\Symphony\Chat\FailedFiles
+
+Volume in Drive \\Msgwvtgsil1701\d$ is Drive_D   Volume Serial Number is 705F-B1E8
+
+Directory of \\Msgwvtgsil1701\d$\Imports\Symphony\Social\FailedFiles
+
+Volume in Drive \\Msgwvtgsil1701\d$ is Drive_D   Volume Serial Number is 705F-B1E8
+
+Directory of \\Msgwvtgsil1701\d$\Imports\Symphony\Chat\SkippedFiles
+
+Volume in Drive \\Msgwvtgsil1701\d$ is Drive_D   Volume Serial Number is 705F-B1E8								
+
+Directory of \\Msgwvtgsil1701\d$\Imports\Symphony\Social\SkippedFiles
+
+==================================================================================
+
+###################Error Check #############################################
+# If there are any entries below they should be investigated
+# These can be for any feed on the Msgwvtgsil1701 system
+############################################################################
+
+=============================== Vantage Log Check =================================
+
+===========================================================================================
+
+
+=================== Symphony Chat Check Complete 2025-02-10  8:22:56.39 ================

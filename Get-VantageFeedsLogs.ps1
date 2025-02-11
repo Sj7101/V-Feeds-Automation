@@ -87,7 +87,6 @@
 
 # Example usage:
 # Parse logs with filters defined in config.json
-$configFilePath = "C:\path\to\config.json"
 $filteredResults = Parse-LogFilesWithFilters -configFilePath $configFilePath
 
 # Display results
