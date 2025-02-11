@@ -3,28 +3,14 @@
     "Symphony": {
       "LogFiles": [
         {
-          "FilePath": "C:\\path\\to\\Symphony_log.txt",
+          "FilePath": "G:\\Code\\V-Feeds-Automation\\email.txt",
           "Filters": [
             {
-              "Keyword": "Processed",
+              "Keyword": "Export Count",
               "Field": "Message",
               "Regex": true,
               "CaptureGroup": 1,
-              "Pattern": "Processed\\s+(\\d+)\\s+items"
-            },
-            {
-              "Keyword": "Check",
-              "Field": "Message",
-              "Regex": true,
-              "CaptureGroup": 1,
-              "Pattern": "Check\\\\(\\S+)"
-            },
-            {
-              "Keyword": "Directory",
-              "Field": "Message",
-              "Regex": true,
-              "CaptureGroup": 1,
-              "Pattern": "Directory\\s+of\\s+(\\\\[^\\s]+)"
+              "Pattern": "(\\d{4}-\\d{2}-\\d{2})\\|([A-Za-z0-9-]+)\\s+\\|\\s+(\\d+)"
             }
           ]
         }

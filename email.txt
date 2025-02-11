@@ -23,16 +23,16 @@ Date	  |Network	  	|Msg Count
 This feed is filtered
 Date 	  | Exporter	 			   |Export State 	|Count
 ----------|----------------------------|---------------|-----
-0225/2/10 | SymphonyChat-CAZL   	   |Exported   	| 296
-0225/2/10 | SymphonyChat-PAZL   	   |Exported   	| 2
-0225/2/10 | CADR-WFS-SymphonyChat      |Exported   	| 262
-0225/2/10 | CADR-QA-WFS-SymphonyChat   |Exported   	| 91
-0225/2/10 | CADR-QA-WFA-SymphonyChat   |Exported   	| 3
-0225/2/11 | SymphonyChat-CAZL   	   |Exported   	| 4426
-0225/2/11 | SymphonyChat-PAZL   	   |Exported   	| 10
-0225/2/11 | CADR-WFS-SymphonyChat  	   |Exported   	| 3194
-0225/2/11 | CADR-QA-WFS-SymphonyChat   |Exported   	| 1537
-0225/2/11 | CADR-QA-WFA-SymphonyChat   |Exported   	| 10
+2025/2/10 | SymphonyChat-CAZL   	   |Exported   	| 296
+2025/2/10 | SymphonyChat-PAZL   	   |Exported   	| 2
+2025/2/10 | CADR-WFS-SymphonyChat      |Exported   	| 262
+2025/2/10 | CADR-QA-WFS-SymphonyChat   |Exported   	| 91
+2025/2/10 | CADR-QA-WFA-SymphonyChat   |Exported   	| 3
+2025/2/11 | SymphonyChat-CAZL   	   |Exported   	| 4426
+2025/2/11 | SymphonyChat-PAZL   	   |Exported   	| 10
+2025/2/11 | CADR-WFS-SymphonyChat  	   |Exported   	| 3194
+2025/2/11 | CADR-QA-WFS-SymphonyChat   |Exported   	| 1537
+2025/2/11 | CADR-QA-WFA-SymphonyChat   |Exported   	| 10
 
 ######################## Directory Checks ########################
 

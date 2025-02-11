@@ -1,8 +1,4 @@
 ﻿function Parse-LogFilesWithFilters {
-    param (
-        [string]$configFilePath  # Path to the config.json file
-    )
-    
     # Read config file
     $config = Get-Content -Path "$PSScriptRoot\config.json" | ConvertFrom-Json
     
@@ -29,45 +25,46 @@
 
                 # Parse each line in the log file and apply the specific filters
                 foreach ($line in $logLines) {
-                    $lineData = [PSCustomObject]@{
-                        "System" = $systemName
-                        "LogFile" = $logFilePath
-                        "Message" = $line
-                    }
-                    
-                    $matchesAllFilters = $true
-                    $capturedValues = @{}
+                    Write-Host "Processing line: $line"  # Debugging the log line
 
-                    # Check if the line matches all filters for the current log file
-                    foreach ($filter in $logFileFilters) {
-                        $fieldValue = $lineData.$($filter.Field)
-
-                        # If Regex matching is enabled
-                        if ($filter.Regex) {
-                            $matches = $fieldValue -match $filter.Pattern
-
-                            if ($matches) {
-                                # If a match is found, capture the specified capture group value
-                                $capturedValue = $matches.Groups[$filter.CaptureGroup].Value
-                                $capturedValues[$filter.Keyword] = $capturedValue
+                    # Only process lines that match the expected format
+                    if ($line -match "(\d{4}-\d{2}-\d{2})\|([A-Za-z0-9-]+)\s+\|\s+(\d+)") {
+                        $capturedValues = @{}
+                        $matches = $line -match "(\d{4}-\d{2}-\d{2})\|([A-Za-z0-9-]+)\s+\|\s+(\d+)"
+                        
+                        if ($matches) {
+                            # Only assign values if the capture group exists
+                            if ($matches.Groups[1]) {
+                                $capturedValues["Date"] = $matches.Groups[1].Value
                             } else {
-                                $matchesAllFilters = $false
-                                break
+                                Write-Host "No Date captured"
                             }
-                        } else {
-                            # Keyword matching (non-regex)
-                            if ($fieldValue -notcontains $filter.Keyword) {
-                                $matchesAllFilters = $false
-                                break
+
+                            if ($matches.Groups[2]) {
+                                $capturedValues["Exporter"] = $matches.Groups[2].Value
+                            } else {
+                                Write-Host "No Exporter captured"
+                            }
+
+                            if ($matches.Groups[3]) {
+                                $capturedValues["Count"] = $matches.Groups[3].Value
+                            } else {
+                                Write-Host "No Count captured"
+                            }
+
+                            # Assuming ExportState as "Exported" for this log
+                            $capturedValues["ExportState"] = "Exported"
+
+                            # Only add to filtered data if all values are present
+                            if ($capturedValues["Date"] -and $capturedValues["Exporter"] -and $capturedValues["Count"]) {
+                                $filteredData += [PSCustomObject]@{
+                                    "Date"        = $capturedValues["Date"]
+                                    "Exporter"    = $capturedValues["Exporter"]
+                                    "ExportState" = $capturedValues["ExportState"]
+                                    "Count"       = $capturedValues["Count"]
+                                }
                             }
                         }
-                    }
-
-                    # If all filters match, add to the system's filtered data
-                    if ($matchesAllFilters) {
-                        # Add captured values to the PSCustomObject
-                        $lineData | Add-Member -MemberType NoteProperty -Name "CapturedValues" -Value $capturedValues
-                        $filteredData += $lineData
                     }
                 }
             } else {
@@ -86,8 +83,8 @@
 }
 
 # Example usage:
-# Parse logs with filters defined in config.json
-$filteredResults = Parse-LogFilesWithFilters -configFilePath $configFilePath
+# The config.json is automatically loaded from the script's directory
+$filteredResults = Parse-LogFilesWithFilters
 
 # Display results
-$filteredResults
+$filteredResults.Symphony
