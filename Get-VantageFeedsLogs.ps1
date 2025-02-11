@@ -30,39 +30,22 @@
                     # Only process lines that match the expected format
                     if ($line -match "(\d{4}-\d{2}-\d{2})\|([A-Za-z0-9-]+)\s+\|\s+(\d+)") {
                         $capturedValues = @{}
-                        $matches = $line -match "(\d{4}-\d{2}-\d{2})\|([A-Za-z0-9-]+)\s+\|\s+(\d+)"
-                        
-                        if ($matches) {
-                            # Only assign values if the capture group exists
-                            if ($matches.Groups[1]) {
-                                $capturedValues["Date"] = $matches.Groups[1].Value
-                            } else {
-                                Write-Host "No Date captured"
-                            }
 
-                            if ($matches.Groups[2]) {
-                                $capturedValues["Exporter"] = $matches.Groups[2].Value
-                            } else {
-                                Write-Host "No Exporter captured"
-                            }
+                        # Now, match and assign capture groups
+                        $capturedValues["Date"] = $matches[1]
+                        $capturedValues["Exporter"] = $matches[2]
+                        $capturedValues["Count"] = $matches[3]
 
-                            if ($matches.Groups[3]) {
-                                $capturedValues["Count"] = $matches.Groups[3].Value
-                            } else {
-                                Write-Host "No Count captured"
-                            }
+                        # Assuming ExportState as "Exported" for this log
+                        $capturedValues["ExportState"] = "Exported"
 
-                            # Assuming ExportState as "Exported" for this log
-                            $capturedValues["ExportState"] = "Exported"
-
-                            # Only add to filtered data if all values are present
-                            if ($capturedValues["Date"] -and $capturedValues["Exporter"] -and $capturedValues["Count"]) {
-                                $filteredData += [PSCustomObject]@{
-                                    "Date"        = $capturedValues["Date"]
-                                    "Exporter"    = $capturedValues["Exporter"]
-                                    "ExportState" = $capturedValues["ExportState"]
-                                    "Count"       = $capturedValues["Count"]
-                                }
+                        # Only add to filtered data if all values are present
+                        if ($capturedValues["Date"] -and $capturedValues["Exporter"] -and $capturedValues["Count"]) {
+                            $filteredData += [PSCustomObject]@{
+                                "Date"        = $capturedValues["Date"]
+                                "Exporter"    = $capturedValues["Exporter"]
+                                "ExportState" = $capturedValues["ExportState"]
+                                "Count"       = $capturedValues["Count"]
                             }
                         }
                     }
